@@ -1,3 +1,42 @@
-<h1>
-    Welcome to the Cali House Pricing App!
-</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cali House Price Predictor</title>
+</head>
+<body>
+    <h1>Welcome to the Cali House Price Predictor</h1>
+    <p>This is your Flask frontend. If you're seeing this, your app is working.</p>
+
+    <div>
+        <form action="{{ url_for('predict') }}" method="post">
+            <label>Median Income:</label><br>
+            <input type="text" name="MedInc" placeholder="e.g., 8.3252" required><br>
+
+            <label>House Age:</label><br>
+            <input type="text" name="HouseAge" placeholder="e.g., 41.0" required><br>
+
+            <label>Average Rooms:</label><br>
+            <input type="text" name="AveRooms" placeholder="e.g., 6.9841" required><br>
+
+            <label>Average Bedrooms:</label><br>
+            <input type="text" name="AveBedrms" placeholder="e.g., 1.0238" required><br>
+
+            <label>Population:</label><br>
+            <input type="text" name="Population" placeholder="e.g., 322" required><br>
+
+            <label>Average Occupancy:</label><br>
+            <input type="text" name="AveOccup" placeholder="e.g., 2.5556" required><br>
+
+            <label>Latitude:</label><br>
+            <input type="text" name="Latitude" placeholder="e.g., 37.88" required><br>
+
+            <label>Longitude:</label><br>
+            <input type="text" name="Longitude" placeholder="e.g., -122.23" required><br><br>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    <p>{{ prediction_text }}</p>
+</body>
+</html>
